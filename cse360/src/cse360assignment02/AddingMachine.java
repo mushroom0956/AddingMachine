@@ -5,12 +5,11 @@ package cse360assignment02;
  * also gives the string of history of the transactions.
  * 
  * @author Lingge Zhang 
- * @version 1.0
- * @since 2020-10-04
  *
  */
 public class AddingMachine {
   private int total;
+  StringBuffer sb = new StringBuffer("0");
   
   /**
    *This is the constructor of the AddingMachine class, 
@@ -25,7 +24,7 @@ public class AddingMachine {
    * @return int This returns the total variable
    */
   public int getTotal () {
-    return 0;
+    return total;
   }
   
   /**
@@ -33,6 +32,8 @@ public class AddingMachine {
    * @param value A integer that is added to the total variable
    */
   public void add (int value) {
+	  total = total + value;
+	  sb.append("+" + value);
   }
 
   /**
@@ -40,6 +41,8 @@ public class AddingMachine {
    * @param value An integer that is subtracted from the total variable.
    */
   public void subtract (int value) {
+	  total = total - value;
+	  sb.append("-" + value);
   }
 
  /**
@@ -47,12 +50,13 @@ public class AddingMachine {
   * @return String a string of transactions
   */
   public String toString () {
-    return "";
+    return sb.toString();
   }
 
   /**
    * This method is used to clear the memory.
    */
   public void clear() {
+	  total = 0;
   }
 }
