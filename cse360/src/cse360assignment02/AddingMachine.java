@@ -57,6 +57,7 @@ public class AddingMachine {
    * This method is used to clear the memory.
    */
   public void clear() {
-	  total = 0;
+	  total = 0; //reset total
+	  sb.delete(0, sb.length()); //clear the history of transaction
   }
 }
